@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>송승훈 | T.M</title>
+<meta name="description" content="명함 한 장에 당신의 모든 비즈니스를 담습니다.">
+<meta property="og:title" content="송승훈 | T.M">
+<meta property="og:description" content="4개국어 디지털 명함으로 글로벌 비즈니스도 막힘없이.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a;
+  --black2: #111111;
+  --black3: #1a1a1a;
+  --gold: #f0b429;
+  --gold-light: #ffd04d;
+  --gold-dim: rgba(240,180,41,0.12);
+  --gold-border: rgba(240,180,41,0.3);
+  --cream: #f5f0e8;
+  --cream-dim: rgba(245,240,232,0.55);
+  --cream-muted: rgba(245,240,232,0.3);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'Noto Sans KR', sans-serif;
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* LANG SWITCHER */
+.lang-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gold-border);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lang-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.lang-buttons {
+  display: flex;
+  gap: 4px;
+}
+.lang-btn {
+  background: none;
+  border: 1px solid var(--gold-border);
+  color: var(--cream-dim);
+  font-size: 11px;
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+}
+.lang-btn.active {
+  background: var(--gold);
+  color: var(--black);
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  background: var(--black2);
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: grayscale(20%);
+}
+.hero-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1208 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-initials {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 120px;
+  font-weight: 400;
+  color: var(--gold-border);
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.3) 50%, transparent 100%);
+}
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 24px 28px;
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  border: 1px solid var(--gold-border);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.hero-title {
+  font-size: 13px;
+  color: var(--cream-dim);
+  letter-spacing: 0.1em;
+}
+
+/* GOLD LINE */
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 24px;
+}
+
+/* SECTION */
+.section {
+  padding: 28px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+/* INTRO */
+.intro-text {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--cream-dim);
+  font-weight: 300;
+}
+.intro-text strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* CONTACT LIST */
+.contact-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+}
+.contact-item:last-child { border-bottom: none; }
+.contact-item:hover .contact-value { color: var(--gold); }
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.contact-meta { flex: 1; min-width: 0; }
+.contact-type { font-size: 10px; color: var(--cream-muted); letter-spacing: 0.1em; margin-bottom: 2px; }
+.contact-value { font-size: 13px; color: var(--cream); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* LINK GRID */
+.link-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.link-card {
+  background: var(--black3);
+  border: 1px solid var(--gold-border);
+  border-radius: 14px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.link-card:hover {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+.link-card-icon { font-size: 22px; }
+.link-card-label { font-size: 10px; color: var(--cream-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.link-card-name { font-size: 13px; font-weight: 500; color: var(--cream); }
+
+/* ACTION BUTTONS */
+.action-row {
+  display: flex;
+  gap: 10px;
+  padding: 24px;
+}
+.btn-primary {
+  flex: 1;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  border-radius: 30px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-secondary {
+  flex: 1;
+  background: none;
+  color: var(--gold);
+  border: 1px solid var(--gold-border);
+  border-radius: 30px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--gold); background: var(--gold-dim); }
+
+/* FOOTER */
+.footer {
+  padding: 24px;
+  text-align: center;
+  border-top: 1px solid var(--gold-border);
+}
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--gold);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.footer-sub {
+  font-size: 10px;
+  color: var(--cream-muted);
+  letter-spacing: 0.15em;
+}
+
+/* LANG CONTENT */
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+[data-lang-inline] { display: none; }
+[data-lang-inline].active { display: inline; }
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <span class="lang-brand">T.M</span>
+  <div class="lang-buttons">
+    <button class="lang-btn active" onclick="setLang('kr')">KR</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">JP</button>
+    <button class="lang-btn" onclick="setLang('cn')">CN</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-placeholder">
+    <span class="hero-initials">宋</span>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-tag">
+      <span data-lang="kr" class="active">웹·앱 개발</span>
+      <span data-lang="en">Web · App Dev</span>
+      <span data-lang="jp">ウェブ・アプリ開発</span>
+      <span data-lang="cn">网页·应用开发</span>
+    </span>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">송승훈</span>
+      <span data-lang="en">Seung-Hun Song</span>
+      <span data-lang="jp">ソン・スンフン</span>
+      <span data-lang="cn">宋昇勳</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 · T.M</span>
+      <span data-lang="en">CEO · T.M</span>
+      <span data-lang="jp">代表 · T.M</span>
+      <span data-lang="cn">代表 · T.M</span>
+    </div>
+  </div>
+</div>
+
+<div class="gold-line"></div>
+
+<!-- INTRO -->
+<div class="section">
+  <div data-lang="kr" class="active intro-text">
+    <strong>명함 한 장에 당신의 모든 비즈니스를 담습니다.</strong><br><br>
+    4개국어 디지털 명함으로 글로벌 비즈니스도 막힘없이.<br>
+    웹·앱 개발까지, T.M이 함께합니다.
+  </div>
+  <div data-lang="en" class="intro-text">
+    <strong>Your entire business, in a single card.</strong><br><br>
+    Break language barriers with a 4-language digital card.<br>
+    Web & app development — T.M has you covered.
+  </div>
+  <div data-lang="jp" class="intro-text">
+    <strong>一枚の名刺に、あなたのすべてのビジネスを。</strong><br><br>
+    4ヶ国語対応のデジタル名刺でグローバルビジネスもスムーズに。<br>
+    ウェブ・アプリ開発まで、T.Mがお手伝いします。
+  </div>
+  <div data-lang="cn" class="intro-text">
+    <strong>一张名片，承载您的全部业务。</strong><br><br>
+    四国语言数字名片，全球商务畅通无阻。<br>
+    网页与应用开发，T.M与您同行。
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+  <div class="contact-label">
+    <span data-lang="kr" class="active">연락처</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">連絡先</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+
+  <a class="contact-item" href="tel:01053342544">
+    <div class="contact-icon">📞</div>
+    <div class="contact-meta">
+      <div class="contact-type">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-5334-2544</div>
+    </div>
+  </a>
+
+  <a class="contact-item" href="mailto:jinjjabg@gmail.com">
+    <div class="contact-icon">✉️</div>
+    <div class="contact-meta">
+      <div class="contact-type">Email</div>
+      <div class="contact-value">jinjjabg@gmail.com</div>
+    </div>
+  </a>
+</div>
+
+<!-- LINKS -->
+<div class="section">
+  <div class="contact-label">
+    <span data-lang="kr" class="active">링크</span>
+    <span data-lang="en">Links</span>
+    <span data-lang="jp">リンク</span>
+    <span data-lang="cn">链接</span>
+  </div>
+  <div class="link-grid">
+    <a class="link-card" href="https://jinjjabg-hub.github.io/MANDU/" target="_blank">
+      <div class="link-card-icon">
+        <img src="https://jinjjabg-hub.github.io/MANDU/icon-192.png" alt="MANDU" style="width:28px;height:28px;object-fit:contain;">
+      </div>
+      <div>
+        <div class="link-card-label">
+          <span data-lang="kr" class="active">번역 메신저</span>
+          <span data-lang="en">Translator</span>
+          <span data-lang="jp">翻訳</span>
+          <span data-lang="cn">翻译</span>
+        </div>
+        <div class="link-card-name">MANDU</div>
+      </div>
+    </a>
+    <a class="link-card" href="https://www.instagram.com/tomahawk_all/" target="_blank">
+      <div class="link-card-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <defs>
+            <radialGradient id="ig1" cx="30%" cy="107%" r="150%">
+              <stop offset="0%" stop-color="#fdf497"/>
+              <stop offset="5%" stop-color="#fdf497"/>
+              <stop offset="45%" stop-color="#fd5949"/>
+              <stop offset="60%" stop-color="#d6249f"/>
+              <stop offset="90%" stop-color="#285AEB"/>
+            </radialGradient>
+          </defs>
+          <rect width="24" height="24" rx="6" fill="url(#ig1)"/>
+          <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8" fill="none"/>
+          <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+        </svg>
+      </div>
+      <div>
+        <div class="link-card-label">Instagram</div>
+        <div class="link-card-name">@tomahawk_all</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ACTION BUTTONS -->
+<div class="action-row">
+  <button class="btn-primary" onclick="saveContact()">
+    <span data-lang="kr" class="active">📞 연락처 저장</span>
+    <span data-lang="en">📞 Save Contact</span>
+    <span data-lang="jp">📞 連絡先保存</span>
+    <span data-lang="cn">📞 保存联系人</span>
+  </button>
+  <button class="btn-secondary" onclick="saveCard()">
+    <span data-lang="kr" class="active">🗂️ 명함 저장</span>
+    <span data-lang="en">🗂️ Save Card</span>
+    <span data-lang="jp">🗂️ 名刺保存</span>
+    <span data-lang="cn">🗂️ 保存名片</span>
+  </button>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">T.M</div>
+  <div class="footer-sub">
+    <span data-lang="kr" class="active">디지털 명함 · 웹·앱 개발</span>
+    <span data-lang="en">Digital Card · Web & App Dev</span>
+    <span data-lang="jp">デジタル名刺・ウェブ・アプリ開発</span>
+    <span data-lang="cn">数字名片 · 网页应用开发</span>
+  </div>
+</div>
+
+<script>
+let currentLang = 'kr';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach((btn, i) => {
+    const langs = ['kr','en','jp','cn'];
+    btn.classList.toggle('active', langs[i] === lang);
+  });
+}
+
+function saveContact() {
+  const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:송승훈
+ORG:T.M
+TITLE:대표 (웹·앱 개발)
+TEL:010-5334-2544
+EMAIL:jinjjabg@gmail.com
+URL:https://jinjjabg-hub.github.io/MANDU/
+END:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'SongSeungHun_TM.vcf';
+  a.click();
+}
+
+function saveCard() {
+  alert('명함첩에 저장되었습니다.');
+}
+</script>
+</body>
+</html>
