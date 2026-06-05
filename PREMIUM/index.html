@@ -3,287 +3,407 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>송승훈 | T.M</title>
+<title>송승훈 | T.M — Transition Makers</title>
 <meta property="og:title" content="송승훈 | T.M — Transition Makers">
-<meta property="og:description" content="One Size Never Fits All. 흔한 템플릿이 아닌, 당신만의 고유한 정체성을 디지털 세계에 구현합니다.">
+<meta property="og:description" content="One Size Never Fits All">
 <meta property="og:type" content="website">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #fdf6ee;
-  --bg2: #f9ede0;
-  --bg3: #f4e2ce;
-  --orange: #e85d04;
-  --orange2: #f48c06;
-  --orange-dim: rgba(232,93,4,0.1);
-  --orange-border: rgba(232,93,4,0.25);
-  --gold: #e85d04;
-  --gold2: #f48c06;
-  --gold-dim: rgba(232,93,4,0.1);
-  --gold-border: rgba(232,93,4,0.25);
-  --dark: #1a0e05;
-  --dark2: #2d1a08;
-  --muted: #7a5c3a;
-  --muted2: rgba(26,14,5,0.45);
-  --outline: rgba(232,93,4,0.15);
+  --black: #fff8f5;
+  --black2: #fff1ea;
+  --bg: #fff8f5;
+  --bg2: #fff1ea;
+  --bg3: #ffeadf;
+  --gold: #735c00;
+  --gold2: #d4af37;
+  --gold-dim: rgba(115,92,0,0.08);
+  --gold-border: rgba(115,92,0,0.2);
+  --cream: #251912;
+  --cream-dim: rgba(37,25,18,0.65);
+  --cream-muted: rgba(37,25,18,0.35);
+  --crimson: #735c00;
+  --crimson2: #d4af37;
+  --crimson-dim: rgba(212,175,55,0.12);
+  --crimson-border: rgba(212,175,55,0.3);
+  --dark: #251912;
+  --muted: #7a6a5a;
+  --orange: #735c00;
+  --orange2: #d4af37;
+  --orange-dim: rgba(115,92,0,0.08);
+  --orange-border: rgba(115,92,0,0.2);
 }
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 body {
-  background: var(--bg);
-  color: var(--dark);
-  font-family: 'Manrope', 'Noto Sans KR', sans-serif;
+  background: #fff8f5;
+  color: #251912;
+  font-family: 'Noto Sans KR', sans-serif;
   max-width: 430px;
   margin: 0 auto;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* NAV */
 .top-nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255,248,245,0.92);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--outline);
+  background: rgba(255,248,245,0.96);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(212,175,55,0.25);
   padding: 10px 20px;
   display: flex; justify-content: space-between; align-items: center;
 }
 .nav-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px; letter-spacing: 0.25em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; letter-spacing: 0.3em;
   color: var(--gold); text-transform: uppercase;
 }
 .lang-buttons { display: flex; gap: 4px; }
 .lang-btn {
-  background: none; border: 1px solid var(--gold-border);
-  color: var(--muted); font-size: 11px; padding: 4px 10px;
+  background: none; border: 1px solid var(--crimson-border);
+  color: var(--cream-dim); font-size: 11px; padding: 4px 10px;
   border-radius: 20px; cursor: pointer; transition: all 0.2s;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
-.lang-btn.active { background: var(--gold); color: #fff; border-color: var(--gold); font-weight: 700; }
+.lang-btn.active { background: var(--gold); color: var(--black); border-color: var(--gold); font-weight: 700; }
 
-/* HERO */
+/* HERO - 풀스크린 임팩트 */
 .hero {
-  position: relative; height: 440px; overflow: hidden;
-  background: var(--dark2);
+  position: relative; height: 520px; overflow: hidden;
+  background: var(--black);
 }
-.hero-placeholder {
+.hero-bg {
   width: 100%; height: 100%;
-  background: linear-gradient(135deg, #3b2d26 0%, #251912 60%, #1a0f08 100%);
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(107,15,26,0.6) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(139,26,40,0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(240,180,41,0.04) 0%, transparent 70%),
+    linear-gradient(135deg, #0d0508 0%, #1a0810 40%, #0a0305 100%);
   display: flex; align-items: center; justify-content: center;
 }
-.hero-initial {
-  font-family: 'Playfair Display', serif;
-  font-size: 140px; color: rgba(212,175,55,0.08);
-  letter-spacing: -0.05em; user-select: none;
+.hero-deco {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
 }
+.hero-ring {
+  width: 320px; height: 320px; border-radius: 50%;
+  border: 1px solid rgba(240,180,41,0.06);
+  position: absolute; animation: rotate 20s linear infinite;
+}
+.hero-ring2 {
+  width: 240px; height: 240px; border-radius: 50%;
+  border: 1px solid rgba(107,15,26,0.2);
+  position: absolute; animation: rotate 15s linear infinite reverse;
+}
+.hero-initial-bg {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 200px; color: rgba(107,15,26,0.12);
+  letter-spacing: -0.05em; user-select: none;
+  position: absolute;
+}
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(37,25,18,0.97) 0%, rgba(37,25,18,0.3) 55%, transparent 100%);
+  background: linear-gradient(to top, rgba(8,5,8,1) 0%, rgba(8,5,8,0.5) 45%, rgba(8,5,8,0.1) 100%);
 }
 .hero-content {
   position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 28px 24px;
+  padding: 36px 28px 32px;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--gold-border);
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 10px; letter-spacing: 0.2em;
+  color: var(--gold); margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.hero-tag::before { content:''; width:5px; height:5px; border-radius:50%; background: var(--gold); }
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 700;
+  color: #fff; line-height: 0.95;
+  margin-bottom: 10px; letter-spacing: -0.02em;
+}
+.hero-name-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-style: italic;
+  color: var(--gold); letter-spacing: 0.1em;
+  margin-bottom: 8px;
 }
 .hero-slogan {
-  font-family: 'Playfair Display', serif;
-  font-size: 13px; font-style: italic;
-  color: var(--gold2); letter-spacing: 0.05em;
-  margin-bottom: 10px; opacity: 0.85;
-}
-.hero-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px; font-weight: 600;
-  color: #fff; line-height: 1; margin-bottom: 6px;
-}
-.hero-title {
-  font-size: 12px; color: rgba(255,255,255,0.6);
-  letter-spacing: 0.15em; text-transform: uppercase;
+  font-size: 11px; color: var(--cream-dim);
+  letter-spacing: 0.12em;
 }
 
-/* GOLD DIVIDER */
-.gold-line {
+/* CRIMSON LINE */
+.crimson-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--crimson2), var(--gold), var(--crimson2), transparent);
 }
 
-/* PROFILE ROW */
-.profile-row {
-  display: flex; align-items: center; gap: 16px;
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(37,25,18,0.06);
+/* PROFILE CENTER */
+.profile-center {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 32px 24px 24px; text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.profile-img-wrap {
+  position: relative; margin-bottom: 16px;
 }
 .profile-img {
-  width: 72px; height: 72px; border-radius: 50%;
+  width: 100px; height: 100px; border-radius: 50%;
   border: 2px solid var(--gold);
-  background: var(--bg3); flex-shrink: 0;
+  background: var(--crimson-dim);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 28px; color: var(--gold); overflow: hidden;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px; color: var(--gold); overflow: hidden;
 }
-.profile-img img { width: 100%; height: 100%; object-fit: cover; }
-.profile-info { flex: 1; }
-.profile-name { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
-.profile-sub { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
+.profile-img img { width:100%; height:100%; object-fit:cover; }
+.profile-badge {
+  position: absolute; bottom: -4px; right: -4px;
+  background: var(--gold); color: var(--black);
+  font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+  padding: 3px 8px; border-radius: 10px;
+}
+.profile-name-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 600; color: #fff;
+  margin-bottom: 4px;
+}
+.profile-company {
+  font-size: 12px; color: var(--gold);
+  letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.profile-desc {
+  font-size: 13px; color: var(--cream-dim);
+  line-height: 1.8; max-width: 320px;
+}
 
 /* SECTION */
-.section { padding: 24px; border-bottom: 1px solid rgba(37,25,18,0.06); }
+.section { padding: 28px 24px; border-bottom: 1px solid rgba(255,255,255,0.04); }
 .sec-label {
-  font-size: 10px; letter-spacing: 0.2em; color: var(--gold);
-  text-transform: uppercase; margin-bottom: 14px;
-  display: flex; align-items: center; gap: 8px;
+  font-size: 10px; letter-spacing: 0.25em; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
 }
-.sec-label::after { content:''; flex:1; height:1px; background: var(--gold-border); }
+.sec-label::before { content:''; width:20px; height:1px; background: var(--crimson2); }
+.sec-label::after { content:''; flex:1; height:1px; background: rgba(107,15,26,0.3); }
 
-/* ABOUT */
-.about-text {
-  font-size: 14px; line-height: 1.9; color: var(--muted);
-  font-weight: 400;
+/* REFERRAL - 앞으로 당김 + 강조 */
+.referral-list { display: flex; flex-direction: column; gap: 10px; }
+.referral-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, rgba(107,15,26,0.2) 0%, rgba(8,5,8,0) 100%);
+  border: 1px solid var(--crimson-border);
+  border-left: 3px solid var(--crimson2);
+  border-radius: 12px;
+  transition: all 0.25s;
 }
+.referral-item:hover { border-left-color: var(--gold); background: var(--gold-dim); }
+.referral-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; color: var(--crimson2);
+  font-weight: 600; flex-shrink: 0; line-height: 1;
+}
+.referral-item:hover .referral-num { color: var(--gold); }
+.referral-text { font-size: 13px; color: var(--cream-dim); line-height: 1.6; }
 
-/* WHY CARDS */
-.why-list { display: flex; flex-direction: column; gap: 12px; }
+/* WHY - 탭형 인터랙션 */
+.why-list { display: flex; flex-direction: column; gap: 8px; }
 .why-card {
-  background: var(--bg2); border: 1px solid var(--outline);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px; overflow: hidden;
+  transition: all 0.3s;
+}
+.why-card.open { border-color: var(--crimson-border); }
+.why-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 18px; cursor: pointer;
+}
+.why-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: var(--crimson-dim); border: 1px solid var(--crimson-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+}
+.why-card.open .why-icon { background: var(--gold-dim); border-color: var(--gold-border); }
+.why-title-text {
+  flex: 1; font-size: 14px; font-weight: 600; color: var(--cream);
+}
+.why-arrow {
+  font-size: 12px; color: var(--cream-muted);
+  transition: transform 0.3s;
+}
+.why-card.open .why-arrow { transform: rotate(180deg); color: var(--gold); }
+.why-body {
+  display: none; padding: 0 18px 16px 66px;
+  font-size: 12px; color: var(--cream-dim); line-height: 1.8;
+}
+.why-card.open .why-body { display: block; }
+
+/* DIFF */
+.diff-list { display: flex; flex-direction: column; gap: 12px; }
+.diff-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+}
+.diff-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; color: rgba(240,180,41,0.2);
+  line-height: 1; flex-shrink: 0; font-weight: 700;
+}
+.diff-title { font-size: 13px; font-weight: 700; color: var(--cream); margin-bottom: 5px; }
+.diff-desc { font-size: 12px; color: var(--cream-dim); line-height: 1.7; }
+
+/* BNI */
+.bni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.bni-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: 14px; padding: 16px;
 }
-.why-title {
-  font-size: 13px; font-weight: 700; color: var(--dark);
-  margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+.bni-card-icon { font-size: 24px; margin-bottom: 8px; }
+.bni-card-title { font-size: 12px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+.bni-card-desc { font-size: 11px; color: var(--cream-dim); line-height: 1.6; }
+.bni-full {
+  background: linear-gradient(135deg, rgba(107,15,26,0.2), rgba(8,5,8,0));
+  border: 1px solid var(--crimson-border);
+  border-radius: 14px; padding: 16px;
+  margin-bottom: 10px;
 }
-.why-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-.why-desc { font-size: 12px; color: var(--muted); line-height: 1.75; }
-
-/* DIFF GRID */
-.diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.diff-card {
-  background: var(--bg2); border: 1px solid var(--outline);
-  border-radius: 14px; padding: 14px;
-}
-.diff-title { font-size: 12px; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
-.diff-desc { font-size: 11px; color: var(--muted); line-height: 1.6; }
-
-/* REFERRAL */
-.referral-list { display: flex; flex-direction: column; gap: 8px; }
-.referral-item {
-  display: flex; align-items: flex-start; gap: 10px;
-  padding: 12px 14px;
-  background: var(--gold-dim); border: 1px solid var(--gold-border);
-  border-radius: 12px;
-  font-size: 13px; color: var(--dark); line-height: 1.5;
-}
-.referral-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px; color: var(--gold);
-  font-weight: 600; flex-shrink: 0; margin-top: 1px;
-}
-
-/* BNI HISTORY */
-.bni-list { display: flex; flex-direction: column; gap: 10px; }
-.bni-item {
-  display: flex; gap: 12px; align-items: flex-start;
-  padding-bottom: 10px; border-bottom: 1px solid rgba(37,25,18,0.06);
-}
-.bni-item:last-child { border-bottom: none; padding-bottom: 0; }
-.bni-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
-.bni-content {}
-.bni-title { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
-.bni-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.bni-full-title { font-size: 12px; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 8px; text-transform: uppercase; }
+.bni-full-desc { font-size: 12px; color: var(--cream-dim); line-height: 1.8; }
 
 /* CONTACT */
 .contact-list { display: flex; flex-direction: column; gap: 0; }
 .contact-item {
   display: flex; align-items: center; gap: 14px;
-  padding: 13px 0; border-bottom: 1px solid rgba(37,25,18,0.06);
+  padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
   text-decoration: none; color: inherit; transition: all 0.2s;
 }
 .contact-item:last-child { border-bottom: none; }
 .contact-item:hover .contact-val { color: var(--gold); }
 .contact-icon-wrap {
-  width: 36px; height: 36px; border-radius: 10px;
-  background: var(--gold-dim); border: 1px solid var(--gold-border);
+  width: 38px; height: 38px; border-radius: 11px;
+  background: var(--crimson-dim); border: 1px solid var(--crimson-border);
   display: flex; align-items: center; justify-content: center;
-  font-size: 15px; flex-shrink: 0;
+  font-size: 16px; flex-shrink: 0;
 }
-.contact-type { font-size: 10px; color: var(--muted2); letter-spacing: 0.1em; margin-bottom: 2px; }
-.contact-val { font-size: 13px; color: var(--dark); }
+.contact-type { font-size: 10px; color: var(--cream-muted); letter-spacing: 0.1em; margin-bottom: 2px; }
+.contact-val { font-size: 13px; color: var(--cream); }
 
-/* LINK GRID */
+/* LINKS */
 .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .link-card {
-  background: var(--bg2); border: 1px solid var(--outline);
+  background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07);
   border-radius: 14px; padding: 16px;
   text-decoration: none; color: inherit;
   display: flex; flex-direction: column; gap: 10px;
-  transition: all 0.25s; cursor: pointer;
+  transition: all 0.25s;
 }
-.link-card:hover { background: var(--gold-dim); border-color: var(--gold); transform: translateY(-2px); }
+.link-card:hover { border-color: var(--crimson-border); background: var(--crimson-dim); transform: translateY(-2px); }
 .link-icon { font-size: 22px; }
-.link-label { font-size: 10px; color: var(--muted2); letter-spacing: 0.1em; text-transform: uppercase; }
-.link-name { font-size: 13px; font-weight: 600; color: var(--dark); }
+.link-label { font-size: 10px; color: var(--cream-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.link-name { font-size: 13px; font-weight: 600; color: var(--cream); }
 
 /* QR */
-.qr-wrap {
+.qr-section {
   display: flex; flex-direction: column; align-items: center;
-  gap: 12px; padding: 24px;
+  gap: 14px; padding: 28px 24px;
+  background: linear-gradient(135deg, rgba(107,15,26,0.12) 0%, rgba(8,5,8,0) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 .qr-img {
-  width: 140px; height: 140px;
-  border: 2px solid var(--gold-border); border-radius: 14px;
-  padding: 8px; background: var(--dark);
+  width: 160px; height: 160px;
+  border: 2px solid var(--crimson-border); border-radius: 16px;
+  padding: 10px; background: var(--black);
 }
-.qr-desc { font-size: 11px; color: var(--muted); text-align: center; letter-spacing: 0.05em; }
+.qr-desc { font-size: 11px; color: var(--cream-muted); letter-spacing: 0.1em; text-align: center; }
 
 /* ACTION */
 .action-row { display: flex; gap: 10px; padding: 24px; }
 .btn-primary {
-  flex: 1; background: var(--gold); color: #fff;
-  border: none; border-radius: 30px; padding: 14px;
-  font-size: 13px; font-weight: 700;
-  font-family: 'Manrope', sans-serif;
+  flex: 1; background: linear-gradient(135deg, var(--crimson2), var(--crimson));
+  color: #fff; border: none; border-radius: 30px; padding: 15px;
+  font-size: 13px; font-weight: 700; font-family: 'Noto Sans KR', sans-serif;
   cursor: pointer; letter-spacing: 0.05em; transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(107,15,26,0.4);
 }
-.btn-primary:hover { background: var(--gold2); color: var(--dark); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(107,15,26,0.5); }
 .btn-secondary {
   flex: 1; background: none; color: var(--gold);
-  border: 1px solid var(--gold-border); border-radius: 30px; padding: 14px;
-  font-size: 13px; font-weight: 500;
-  font-family: 'Manrope', sans-serif;
+  border: 1px solid var(--gold-border); border-radius: 30px; padding: 15px;
+  font-size: 13px; font-weight: 500; font-family: 'Noto Sans KR', sans-serif;
   cursor: pointer; letter-spacing: 0.05em; transition: all 0.2s;
 }
 .btn-secondary:hover { border-color: var(--gold); background: var(--gold-dim); }
 
 /* FOOTER */
 .footer {
-  text-align: center; padding: 28px 24px;
-  border-top: 1px solid var(--gold-border);
-  background: var(--bg2);
+  text-align: center; padding: 32px 24px;
+  border-top: 1px solid var(--crimson-border);
+  background: linear-gradient(to top, rgba(107,15,26,0.08), transparent);
 }
 .footer-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px; color: var(--gold);
-  letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 4px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; color: var(--gold);
+  letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 4px;
 }
-.footer-full { font-size: 11px; color: var(--muted2); letter-spacing: 0.1em; margin-bottom: 10px; }
-.footer-sub { font-size: 10px; color: var(--muted2); letter-spacing: 0.15em; }
+.footer-full { font-size: 11px; color: var(--cream-muted); letter-spacing: 0.15em; margin-bottom: 10px; }
+.footer-sub { font-size: 10px; color: rgba(245,237,232,0.2); letter-spacing: 0.12em; }
+
+/* VIDEO */
+.video-section {
+  padding: 0 24px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.video-wrap {
+  position: relative; width: 100%;
+  aspect-ratio: 16/9; border-radius: 16px; overflow: hidden;
+  background: var(--black2);
+  border: 1px solid var(--orange-border);
+}
+.video-wrap video { width:100%; height:100%; object-fit:cover; }
+.video-placeholder {
+  width:100%; height:100%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:12px; background: linear-gradient(135deg, #1a1008 0%, #090909 100%);
+}
+.video-play-icon {
+  width:56px; height:56px; border-radius:50%;
+  background: var(--orange); display:flex; align-items:center; justify-content:center;
+  font-size:22px; cursor:pointer; transition: all 0.2s;
+}
+.video-play-icon:hover { transform:scale(1.08); background: var(--orange2); }
+.video-label { font-size:12px; color:var(--cream-muted); letter-spacing:0.1em; }
 
 /* SLIDE */
-.slide-section { padding: 24px; border-bottom: 1px solid rgba(26,14,5,0.06); }
+.slide-section { padding: 24px; border-bottom: 1px solid rgba(255,255,255,0.04); }
 .slide-wrap { position:relative; overflow:hidden; border-radius:16px; }
 .slide-track {
   display:flex; transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 .slide-item {
   flex-shrink:0; width:100%; aspect-ratio:4/3;
-  background: var(--bg3); border-radius:16px; overflow:hidden;
+  background: var(--black2); border-radius:16px; overflow:hidden;
   display:flex; align-items:center; justify-content:center;
 }
 .slide-item img { width:100%; height:100%; object-fit:cover; }
 .slide-placeholder {
   width:100%; height:100%;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
-  gap:8px;
+  gap:8px; color:var(--cream-muted);
 }
-.slide-placeholder-icon { font-size:36px; opacity:0.25; }
-.slide-placeholder-text { font-size:11px; letter-spacing:0.1em; color:var(--muted2); opacity:0.5; }
+.slide-placeholder-icon { font-size:36px; opacity:0.3; }
+.slide-placeholder-text { font-size:11px; letter-spacing:0.1em; opacity:0.4; }
 .slide-controls {
   display:flex; justify-content:space-between; align-items:center;
   margin-top:12px;
@@ -291,23 +411,21 @@ body {
 .slide-btn {
   width:36px; height:36px; border-radius:50%;
   background: var(--orange-dim); border:1px solid var(--orange-border);
-  color:var(--dark); font-size:18px; cursor:pointer;
+  color:var(--cream); font-size:16px; cursor:pointer;
   display:flex; align-items:center; justify-content:center;
   transition:all 0.2s;
 }
-.slide-btn:hover { background:var(--orange); color:#fff; }
-.slide-dots { display:flex; gap:6px; align-items:center; }
+.slide-btn:hover { background:var(--orange); }
+.slide-dots { display:flex; gap:6px; }
 .slide-dot {
   width:6px; height:6px; border-radius:50%;
-  background:rgba(26,14,5,0.15); cursor:pointer; transition:all 0.2s;
+  background:rgba(255,255,255,0.15); cursor:pointer; transition:all 0.2s;
 }
 .slide-dot.active { background:var(--orange); width:18px; border-radius:3px; }
 
 /* LANG */
 [data-lang] { display: none; }
 [data-lang].active { display: block; }
-.hero-name [data-lang] { display: none; }
-.hero-name [data-lang].active { display: block; }
 </style>
 </head>
 <body>
@@ -325,231 +443,56 @@ body {
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-placeholder"><span class="hero-initial">宋</span></div>
+  <div class="hero-bg">
+    <div class="hero-deco">
+      <div class="hero-ring"></div>
+      <div class="hero-ring2"></div>
+      <span class="hero-initial-bg">宋</span>
+    </div>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-slogan">" One Size Never Fits All "</div>
+    <div class="hero-tag">
+      <span data-lang="kr" class="active">앱·웹 개발 · T.M</span>
+      <span data-lang="en">App & Web Dev · T.M</span>
+      <span data-lang="jp">アプリ·ウェブ開発 · T.M</span>
+      <span data-lang="cn">应用·网页开发 · T.M</span>
+    </div>
     <div class="hero-name">
       <span data-lang="kr" class="active">송승훈</span>
-      <span data-lang="en">Seung-Hun Song</span>
+      <span data-lang="en" style="font-size:36px;">Seung-Hun Song</span>
       <span data-lang="jp">ソン・スンフン</span>
       <span data-lang="cn">宋昇勳</span>
     </div>
-    <div class="hero-title">
-      <span data-lang="kr" class="active">대표 · T.M (Transition Makers)</span>
-      <span data-lang="en">CEO · T.M (Transition Makers)</span>
-      <span data-lang="jp">代表 · T.M (Transition Makers)</span>
-      <span data-lang="cn">代表 · T.M (Transition Makers)</span>
+    <div class="hero-name-en">
+      <span data-lang="kr" class="active">Seung-Hun Song · CEO</span>
+      <span data-lang="en">Transition Makers</span>
+      <span data-lang="jp">代表 · Transition Makers</span>
+      <span data-lang="cn">代表 · Transition Makers</span>
     </div>
-  </div>
-</div>
-<div class="gold-line"></div>
-
-<!-- ABOUT -->
-<div class="section">
-  <div class="sec-label">
-    <span data-lang="kr" class="active">소개</span>
-    <span data-lang="en">About</span>
-    <span data-lang="jp">紹介</span>
-    <span data-lang="cn">简介</span>
-  </div>
-  <div data-lang="kr" class="active about-text">흔한 템플릿이 아닌, 당신만의 고유한 정체성과 가치관을 디지털 세계에 구현합니다.</div>
-  <div data-lang="en" class="about-text">Not a cookie-cutter template — your unique identity and values, realized in the digital world.</div>
-  <div data-lang="jp" class="about-text">ありきたりなテンプレートではなく、あなただけの個性と価値観をデジタル世界に実現します。</div>
-  <div data-lang="cn" class="about-text">不是千篇一律的模板，而是将您独特的身份和价值观在数字世界中实现。</div>
-</div>
-
-<!-- WHY -->
-<div class="section">
-  <div class="sec-label">Why T.M</div>
-  <div class="why-list">
-    <div class="why-card">
-      <div class="why-title"><span class="why-dot"></span>
-        <span data-lang="kr" class="active">아이덴티티 커스텀</span>
-        <span data-lang="en">Identity Custom</span>
-        <span data-lang="jp">アイデンティティカスタム</span>
-        <span data-lang="cn">身份定制</span>
-      </div>
-      <div data-lang="kr" class="active why-desc">흔한 템플릿에 끼워 맞추는 공장형 개발이 아닙니다. 클라이언트 고유의 철학과 가치관을 온전히 담아낸 세상에 단 하나뿐인 디지털 브랜딩을 실현합니다.</div>
-      <div data-lang="en" class="why-desc">Not factory-line development. We create one-of-a-kind digital branding that fully embodies each client's unique philosophy.</div>
-      <div data-lang="jp" class="why-desc">量産型の開発ではありません。クライアントの哲学と価値観を完全に体現した、世界に一つだけのデジタルブランディングを実現します。</div>
-      <div data-lang="cn" class="why-desc">不是流水线式开发。完全体现客户独特哲学和价值观的，世界上独一无二的数字品牌打造。</div>
-    </div>
-    <div class="why-card">
-      <div class="why-title"><span class="why-dot"></span>
-        <span data-lang="kr" class="active">도메인 크로스오버</span>
-        <span data-lang="en">Domain Crossover</span>
-        <span data-lang="jp">ドメインクロスオーバー</span>
-        <span data-lang="cn">领域跨界</span>
-      </div>
-      <div data-lang="kr" class="active why-desc">15년의 메디컬 데이터 분석과 8년의 실전 F&B 경영 노하우. 비즈니스 생태계를 입체적으로 이해하기에 단순 코딩을 넘어 실제 '돈이 되는 기획'을 먼저 제안합니다.</div>
-      <div data-lang="en" class="why-desc">15 years of medical data analysis + 8 years of F&B management. We propose 'profitable plans' — not just code.</div>
-      <div data-lang="jp" class="why-desc">15年のメディカルデータ分析と8年のF&B経営ノウハウ。単なるコーディングを超え、実際に「利益になる企画」を先に提案します。</div>
-      <div data-lang="cn" class="why-desc">15年医疗数据分析与8年F&B经营经验。超越单纯编码，优先提出真正"能赚钱的规划"。</div>
-    </div>
-    <div class="why-card">
-      <div class="why-title"><span class="why-dot"></span>
-        <span data-lang="kr" class="active">미니멀 스타트</span>
-        <span data-lang="en">Minimal Start</span>
-        <span data-lang="jp">ミニマルスタート</span>
-        <span data-lang="cn">极简启动</span>
-      </div>
-      <div data-lang="kr" class="active why-desc">고비용 부담 때문에 시작조차 못 하는 일이 없도록 합니다. 가장 합리적인 비용으로 빠르게 시장에 진입할 수 있는 최적의 스케일업 라인을 설계합니다.</div>
-      <div data-lang="en" class="why-desc">No one should be stopped by high costs. We design the optimal scale-up path for the fastest, most affordable market entry.</div>
-      <div data-lang="jp" class="why-desc">高コストのために始められないことがないようにします。最も合理的なコストで素早く市場参入できる最適なスケールアップラインを設計します。</div>
-      <div data-lang="cn" class="why-desc">不让任何人因高成本而无法开始。以最合理的成本设计最优快速进入市场的扩展路线。</div>
-    </div>
+    <div class="hero-slogan">" One Size Never Fits All "</div>
   </div>
 </div>
 
-<!-- DIFFERENCE -->
-<div class="section">
-  <div class="sec-label">
-    <span data-lang="kr" class="active">차별점</span>
-    <span data-lang="en">Difference</span>
-    <span data-lang="jp">差別化</span>
-    <span data-lang="cn">差异化</span>
-  </div>
-  <div class="diff-grid">
-    <div class="diff-card">
-      <div class="diff-title">
-        <span data-lang="kr" class="active">비즈니스 디코딩</span>
-        <span data-lang="en">Biz Decoding</span>
-        <span data-lang="jp">ビジネス解読</span>
-        <span data-lang="cn">商业解码</span>
-      </div>
-      <div data-lang="kr" class="active diff-desc">사업가의 진짜 니즈를 정확하게 해석하여 시스템으로 구현합니다.</div>
-      <div data-lang="en" class="diff-desc">Decode the entrepreneur's real needs and translate them into systems.</div>
-      <div data-lang="jp" class="diff-desc">事業家の本当のニーズを正確に解読し、システムとして実現します。</div>
-      <div data-lang="cn" class="diff-desc">精准解读企业家的真实需求，转化为系统实现。</div>
-    </div>
-    <div class="diff-card">
-      <div class="diff-title">
-        <span data-lang="kr" class="active">데이터 기반 UX</span>
-        <span data-lang="en">Data-Driven UX</span>
-        <span data-lang="jp">データ駆動UX</span>
-        <span data-lang="cn">数据驱动UX</span>
-      </div>
-      <div data-lang="kr" class="active diff-desc">실전 데이터 기반으로 사용자가 직관적으로 반응하는 인터페이스를 설계합니다.</div>
-      <div data-lang="en" class="diff-desc">Design interfaces users instinctively respond to, backed by real-world data.</div>
-      <div data-lang="jp" class="diff-desc">実戦データに基づき、ユーザーが直感的に反応するインターフェースを設計します。</div>
-      <div data-lang="cn" class="diff-desc">基于实战数据，设计用户直觉响应的界面。</div>
-    </div>
-    <div class="diff-card">
-      <div class="diff-title">
-        <span data-lang="kr" class="active">오너십 컨설팅</span>
-        <span data-lang="en">Ownership Consulting</span>
-        <span data-lang="jp">オーナーシップ</span>
-        <span data-lang="cn">主导权咨询</span>
-      </div>
-      <div data-lang="kr" class="active diff-desc">납품하고 끝이 아닙니다. 오너의 관점으로 함께 사업을 고민합니다.</div>
-      <div data-lang="en" class="diff-desc">We don't just deliver and leave — we think about your business like it's our own.</div>
-      <div data-lang="jp" class="diff-desc">納品して終わりではありません。オーナーの視点で一緒に事業を考えます。</div>
-      <div data-lang="cn" class="diff-desc">不是交付就结束。以业主视角共同思考您的事业。</div>
-    </div>
-    <div class="diff-card">
-      <div class="diff-title">
-        <span data-lang="kr" class="active">플랫폼 인프라</span>
-        <span data-lang="en">Platform Infra</span>
-        <span data-lang="jp">プラットフォーム基盤</span>
-        <span data-lang="cn">平台基础设施</span>
-      </div>
-      <div data-lang="kr" class="active diff-desc">향후 비즈니스 확장에도 유연하게 대응하는 단단한 인프라를 구축합니다.</div>
-      <div data-lang="en" class="diff-desc">Build solid infrastructure that scales flexibly with your future growth.</div>
-      <div data-lang="jp" class="diff-desc">将来のビジネス拡張にも柔軟に対応できる強固なインフラを構築します。</div>
-      <div data-lang="cn" class="diff-desc">构建能灵活应对未来业务扩张的坚实基础设施。</div>
-    </div>
-  </div>
-</div>
+<div class="crimson-line"></div>
 
-<!-- REFERRAL -->
-<div class="section">
-  <div class="sec-label">
-    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
-    <span data-lang="en">Referral Request</span>
-    <span data-lang="jp">ご紹介ください</span>
-    <span data-lang="cn">欢迎介绍</span>
+<!-- VIDEO -->
+<div class="video-section">
+  <div class="sec-label" style="padding-top:4px;">
+    <span data-lang="kr" class="active">소개 영상</span>
+    <span data-lang="en">Intro Video</span>
+    <span data-lang="jp">紹介動画</span>
+    <span data-lang="cn">介绍视频</span>
   </div>
-  <div class="referral-list">
-    <div class="referral-item">
-      <span class="referral-num">01</span>
-      <span data-lang="kr" class="active">나만의 고유한 철학을 담은 독창적인 웹페이지가 필요한 분</span>
-      <span data-lang="en">Those needing a unique website reflecting their own philosophy</span>
-      <span data-lang="jp">独自の哲学を込めた独創的なウェブページが必要な方</span>
-      <span data-lang="cn">需要独特网页来体现个人哲学的人士</span>
-    </div>
-    <div class="referral-item">
-      <span class="referral-num">02</span>
-      <span data-lang="kr" class="active">아이디어를 앱·웹 플랫폼으로 빠르게 시각화하고 싶은 초기 창업가</span>
-      <span data-lang="en">Early-stage entrepreneurs wanting to rapidly prototype their ideas</span>
-      <span data-lang="jp">アイデアをアプリ・ウェブで素早く形にしたい初期起業家</span>
-      <span data-lang="cn">希望快速将想法可视化为应用/网页平台的初创企业家</span>
-    </div>
-    <div class="referral-item">
-      <span class="referral-num">03</span>
-      <span data-lang="kr" class="active">시그니처 메뉴 개발과 오너 중심 실전 컨설팅이 필요한 요식업 대표님</span>
-      <span data-lang="en">F&B owners needing signature menu development and hands-on consulting</span>
-      <span data-lang="jp">シグネチャーメニュー開発とオーナー中心のコンサルが必要な飲食業の代表</span>
-      <span data-lang="cn">需要特色菜单开发和以业主为中心实战咨询的餐饮业主</span>
-    </div>
-    <div class="referral-item">
-      <span class="referral-num">04</span>
-      <span data-lang="kr" class="active">IT·F&B·웰니스 융합으로 함께 비즈니스 시너지를 낼 협업 파트너</span>
-      <span data-lang="en">Collaboration partners to create synergy across IT, F&B, and Wellness</span>
-      <span data-lang="jp">IT・F&B・ウェルネスの融合でビジネスシナジーを生む協業パートナー</span>
-      <span data-lang="cn">能在IT·餐饮·健康领域共同创造业务协同效应的合作伙伴</span>
-    </div>
-  </div>
-</div>
-
-<!-- BNI + PROFILE -->
-<div class="section">
-  <div class="sec-label">BNI History</div>
-  <!-- 프로필 인라인 -->
-  <div class="profile-row" style="padding:4px 0 20px;border-bottom:1px solid rgba(26,14,5,0.06);margin-bottom:20px;">
-    <div class="profile-img">宋</div>
-    <div class="profile-info">
-      <div class="profile-name">
-        <span data-lang="kr" class="active">송승훈 대표</span>
-        <span data-lang="en">Seung-Hun Song</span>
-        <span data-lang="jp">ソン・スンフン 代表</span>
-        <span data-lang="cn">宋昇勳 代表</span>
-      </div>
-      <div class="profile-sub">
-        <span data-lang="kr" class="active">앱·웹 개발 · T.M</span>
-        <span data-lang="en">App & Web Dev · T.M</span>
-        <span data-lang="jp">アプリ・ウェブ開発 · T.M</span>
-        <span data-lang="cn">应用·网页开发 · T.M</span>
-      </div>
-    </div>
-  </div>
-  <div class="bni-list">
-    <div class="bni-item">
-      <span class="bni-icon">🏆</span>
-      <div class="bni-content">
-        <div class="bni-title">BNI 파이오니어 챕터</div>
-        <div class="bni-desc">4년차 · 의장 1년 · 멘토링코디 · 비지터호스트리더 · ST · 멤버쉽위원 · 3스타 그린클럽<br>자이언츠 챕터 앰버서더</div>
-      </div>
-    </div>
-    <div class="bni-item">
-      <span class="bni-icon">🏥</span>
-      <div class="bni-content">
-        <div class="bni-title">물리치료사</div>
-        <div class="bni-desc">15년의 메디컬 데이터 분석 경험</div>
-      </div>
-    </div>
-    <div class="bni-item">
-      <span class="bni-icon">🍽️</span>
-      <div class="bni-content">
-        <div class="bni-title">요식업</div>
-        <div class="bni-desc">10년의 실전 F&B 브랜드 경영 및 사운드 브랜딩</div>
-      </div>
-    </div>
-    <div class="bni-item">
-      <span class="bni-icon">💻</span>
-      <div class="bni-content">
-        <div class="bni-title">T.M 대표</div>
-        <div class="bni-desc">앱·웹 개발사 — Transition Makers</div>
+  <div class="video-wrap">
+    <!-- 실제 영상: <video src="video.mp4" controls playsinline></video> -->
+    <div class="video-placeholder">
+      <div class="video-play-icon">▶</div>
+      <div class="video-label">
+        <span data-lang="kr" class="active">영상 파일을 여기에 연결하세요</span>
+        <span data-lang="en">Link your video file here</span>
+        <span data-lang="jp">動画ファイルをここに接続</span>
+        <span data-lang="cn">在此处链接视频文件</span>
       </div>
     </div>
   </div>
@@ -565,17 +508,273 @@ body {
   </div>
   <div class="slide-wrap">
     <div class="slide-track" id="slideTrack">
-      <div class="slide-item"><div class="slide-placeholder"><div class="slide-placeholder-icon">🖼️</div><div class="slide-placeholder-text">IMAGE 01</div></div></div>
-      <div class="slide-item"><div class="slide-placeholder"><div class="slide-placeholder-icon">🖼️</div><div class="slide-placeholder-text">IMAGE 02</div></div></div>
-      <div class="slide-item"><div class="slide-placeholder"><div class="slide-placeholder-icon">🖼️</div><div class="slide-placeholder-text">IMAGE 03</div></div></div>
-      <div class="slide-item"><div class="slide-placeholder"><div class="slide-placeholder-icon">🖼️</div><div class="slide-placeholder-text">IMAGE 04</div></div></div>
-      <div class="slide-item"><div class="slide-placeholder"><div class="slide-placeholder-icon">🖼️</div><div class="slide-placeholder-text">IMAGE 05</div></div></div>
+      <div class="slide-item">
+        <div class="slide-placeholder">
+          <div class="slide-placeholder-icon">🖼️</div>
+          <div class="slide-placeholder-text">IMAGE 01</div>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-placeholder">
+          <div class="slide-placeholder-icon">🖼️</div>
+          <div class="slide-placeholder-text">IMAGE 02</div>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-placeholder">
+          <div class="slide-placeholder-icon">🖼️</div>
+          <div class="slide-placeholder-text">IMAGE 03</div>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-placeholder">
+          <div class="slide-placeholder-icon">🖼️</div>
+          <div class="slide-placeholder-text">IMAGE 04</div>
+        </div>
+      </div>
+      <div class="slide-item">
+        <div class="slide-placeholder">
+          <div class="slide-placeholder-icon">🖼️</div>
+          <div class="slide-placeholder-text">IMAGE 05</div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="slide-controls">
     <button class="slide-btn" onclick="slideMove(-1)">‹</button>
     <div class="slide-dots" id="slideDots"></div>
     <button class="slide-btn" onclick="slideMove(1)">›</button>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="sec-label">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Referral Request</span>
+    <span data-lang="jp">ご紹介ください</span>
+    <span data-lang="cn">欢迎介绍</span>
+  </div>
+  <div class="referral-list">
+    <div class="referral-item">
+      <span class="referral-num">01</span>
+      <span class="referral-text">
+        <span data-lang="kr" class="active">나만의 고유한 철학을 담은 독창적인 웹페이지가 필요한 분</span>
+        <span data-lang="en">Those needing a unique website reflecting their own philosophy</span>
+        <span data-lang="jp">独自の哲学を込めた独創的なウェブページが必要な方</span>
+        <span data-lang="cn">需要独特网页来体现个人哲学的人士</span>
+      </span>
+    </div>
+    <div class="referral-item">
+      <span class="referral-num">02</span>
+      <span class="referral-text">
+        <span data-lang="kr" class="active">아이디어를 앱·웹 플랫폼으로 빠르게 시각화하고 싶은 초기 창업가</span>
+        <span data-lang="en">Early-stage entrepreneurs wanting to rapidly prototype their ideas</span>
+        <span data-lang="jp">アイデアをアプリ・ウェブで素早く形にしたい初期起業家</span>
+        <span data-lang="cn">希望快速将想法可视化为应用/网页平台的初创企业家</span>
+      </span>
+    </div>
+    <div class="referral-item">
+      <span class="referral-num">03</span>
+      <span class="referral-text">
+        <span data-lang="kr" class="active">시그니처 메뉴 개발과 오너 중심 실전 컨설팅이 필요한 요식업 대표님</span>
+        <span data-lang="en">F&B owners needing signature menu development and hands-on consulting</span>
+        <span data-lang="jp">シグネチャーメニュー開発とオーナー中心のコンサルが必要な飲食業の代表</span>
+        <span data-lang="cn">需要特色菜单开发和以业主为中心实战咨询的餐饮业主</span>
+      </span>
+    </div>
+    <div class="referral-item">
+      <span class="referral-num">04</span>
+      <span class="referral-text">
+        <span data-lang="kr" class="active">IT·F&B·웰니스 융합으로 함께 비즈니스 시너지를 낼 협업 파트너</span>
+        <span data-lang="en">Collaboration partners across IT, F&B, and Wellness</span>
+        <span data-lang="jp">IT・F&B・ウェルネスの融合でシナジーを生む協業パートナー</span>
+        <span data-lang="cn">能在IT·餐饮·健康领域共同创造协同效应的合作伙伴</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- WHY - 탭 인터랙션 -->
+<div class="section">
+  <div class="sec-label">Why T.M</div>
+  <div class="why-list">
+    <div class="why-card open" onclick="toggleWhy(this)">
+      <div class="why-header">
+        <div class="why-icon">🎯</div>
+        <div class="why-title-text">
+          <span data-lang="kr" class="active">아이덴티티 커스텀</span>
+          <span data-lang="en">Identity Custom</span>
+          <span data-lang="jp">アイデンティティカスタム</span>
+          <span data-lang="cn">身份定制</span>
+        </div>
+        <span class="why-arrow">▼</span>
+      </div>
+      <div class="why-body">
+        <span data-lang="kr" class="active">흔한 템플릿에 끼워 맞추는 공장형 개발이 아닙니다. 클라이언트 고유의 철학과 가치관을 온전히 담아낸 세상에 단 하나뿐인 디지털 브랜딩을 실현합니다.</span>
+        <span data-lang="en">Not factory-line development. We create one-of-a-kind digital branding that fully embodies each client's unique philosophy.</span>
+        <span data-lang="jp">量産型の開発ではありません。クライアントの哲学と価値観を完全に体現した、世界に一つだけのデジタルブランディングを実現します。</span>
+        <span data-lang="cn">不是流水线式开发。完全体现客户独特哲学和价值观的，世界上独一无二的数字品牌打造。</span>
+      </div>
+    </div>
+    <div class="why-card" onclick="toggleWhy(this)">
+      <div class="why-header">
+        <div class="why-icon">🔗</div>
+        <div class="why-title-text">
+          <span data-lang="kr" class="active">도메인 크로스오버</span>
+          <span data-lang="en">Domain Crossover</span>
+          <span data-lang="jp">ドメインクロスオーバー</span>
+          <span data-lang="cn">领域跨界</span>
+        </div>
+        <span class="why-arrow">▼</span>
+      </div>
+      <div class="why-body">
+        <span data-lang="kr" class="active">15년의 메디컬 데이터 분석과 8년의 실전 F&B 경영 노하우. 비즈니스 생태계를 입체적으로 이해하기에 단순 코딩을 넘어 실제 '돈이 되는 기획'을 먼저 제안합니다.</span>
+        <span data-lang="en">15 years of medical data analysis + 8 years of F&B management. We propose 'profitable plans' — not just code.</span>
+        <span data-lang="jp">15年のメディカルデータ分析と8年のF&B経営ノウハウ。単なるコーディングを超え、「利益になる企画」を先に提案します。</span>
+        <span data-lang="cn">15年医疗数据分析与8年F&B经营经验。超越单纯编码，优先提出真正"能赚钱的规划"。</span>
+      </div>
+    </div>
+    <div class="why-card" onclick="toggleWhy(this)">
+      <div class="why-header">
+        <div class="why-icon">🚀</div>
+        <div class="why-title-text">
+          <span data-lang="kr" class="active">미니멀 스타트</span>
+          <span data-lang="en">Minimal Start</span>
+          <span data-lang="jp">ミニマルスタート</span>
+          <span data-lang="cn">极简启动</span>
+        </div>
+        <span class="why-arrow">▼</span>
+      </div>
+      <div class="why-body">
+        <span data-lang="kr" class="active">고비용 부담 때문에 시작조차 못 하는 일이 없도록 합니다. 가장 합리적인 비용으로 빠르게 시장에 진입할 수 있는 최적의 스케일업 라인을 설계합니다.</span>
+        <span data-lang="en">No one should be stopped by high costs. We design the optimal scale-up path for the fastest, most affordable market entry.</span>
+        <span data-lang="jp">高コストのために始められないことがないようにします。最も合理的なコストで素早く市場参入できるスケールアップラインを設計します。</span>
+        <span data-lang="cn">不让任何人因高成本而无法开始。以最合理的成本设计最优快速进入市场的扩展路线。</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIFFERENCE -->
+<div class="section">
+  <div class="sec-label">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">Difference</span>
+    <span data-lang="jp">差別化</span>
+    <span data-lang="cn">差异化</span>
+  </div>
+  <div class="diff-list">
+    <div class="diff-item">
+      <span class="diff-num">01</span>
+      <div>
+        <div class="diff-title">
+          <span data-lang="kr" class="active">비즈니스 디코딩</span>
+          <span data-lang="en">Business Decoding</span>
+          <span data-lang="jp">ビジネス解読</span>
+          <span data-lang="cn">商业解码</span>
+        </div>
+        <div class="diff-desc">
+          <span data-lang="kr" class="active">사업가의 진짜 니즈를 정확하게 해석하여 시스템으로 구현합니다.</span>
+          <span data-lang="en">Decode the entrepreneur's real needs and translate them into systems.</span>
+          <span data-lang="jp">事業家の本当のニーズを正確に解読し、システムとして実現します。</span>
+          <span data-lang="cn">精准解读企业家的真实需求，转化为系统实现。</span>
+        </div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <span class="diff-num">02</span>
+      <div>
+        <div class="diff-title">
+          <span data-lang="kr" class="active">데이터 기반 UX</span>
+          <span data-lang="en">Data-Driven UX</span>
+          <span data-lang="jp">データ駆動UX</span>
+          <span data-lang="cn">数据驱动UX</span>
+        </div>
+        <div class="diff-desc">
+          <span data-lang="kr" class="active">실전 데이터 기반으로 사용자가 직관적으로 반응하는 인터페이스를 설계합니다.</span>
+          <span data-lang="en">Design interfaces users instinctively respond to, backed by real-world data.</span>
+          <span data-lang="jp">実戦データに基づき、ユーザーが直感的に反応するインターフェースを設計します。</span>
+          <span data-lang="cn">基于实战数据，设计用户直觉响应的界面。</span>
+        </div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <span class="diff-num">03</span>
+      <div>
+        <div class="diff-title">
+          <span data-lang="kr" class="active">오너십 컨설팅</span>
+          <span data-lang="en">Ownership Consulting</span>
+          <span data-lang="jp">オーナーシップ</span>
+          <span data-lang="cn">主导权咨询</span>
+        </div>
+        <div class="diff-desc">
+          <span data-lang="kr" class="active">납품하고 끝이 아닙니다. 오너의 관점으로 함께 사업을 고민합니다.</span>
+          <span data-lang="en">We don't just deliver and leave — we think about your business like it's our own.</span>
+          <span data-lang="jp">納品して終わりではありません。オーナーの視点で一緒に事業を考えます。</span>
+          <span data-lang="cn">不是交付就结束。以业主视角共同思考您的事业。</span>
+        </div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <span class="diff-num">04</span>
+      <div>
+        <div class="diff-title">
+          <span data-lang="kr" class="active">플랫폼 인프라 구축</span>
+          <span data-lang="en">Platform Infrastructure</span>
+          <span data-lang="jp">プラットフォーム基盤</span>
+          <span data-lang="cn">平台基础设施</span>
+        </div>
+        <div class="diff-desc">
+          <span data-lang="kr" class="active">향후 비즈니스 확장에도 유연하게 대응하는 단단한 인프라를 구축합니다.</span>
+          <span data-lang="en">Build solid infrastructure that scales flexibly with your future growth.</span>
+          <span data-lang="jp">将来のビジネス拡張にも柔軟に対応できる強固なインフラを構築します。</span>
+          <span data-lang="cn">构建能灵活应对未来业务扩张的坚实基础设施。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE + BNI -->
+<div class="section">
+  <div class="sec-label">BNI History</div>
+  <!-- 프로필 인라인 -->
+  <div style="display:flex;align-items:center;gap:16px;padding:4px 0 20px;border-bottom:1px solid rgba(37,25,18,0.06);margin-bottom:20px;">
+    <div style="position:relative;flex-shrink:0;">
+      <div class="profile-img">宋</div>
+      <div class="profile-badge">CEO</div>
+    </div>
+    <div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--cream);margin-bottom:3px;">
+        <span data-lang="kr" class="active">송승훈 대표</span>
+        <span data-lang="en">Seung-Hun Song</span>
+        <span data-lang="jp">ソン・スンフン 代表</span>
+        <span data-lang="cn">宋昇勳 代表</span>
+      </div>
+      <div style="font-size:11px;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;">T.M · Transition Makers</div>
+    </div>
+  </div>
+  <div class="bni-full">
+    <div class="bni-full-title">🏆 BNI 파이오니어 챕터</div>
+    <div class="bni-full-desc">4년차 · 의장 1년 · 멘토링코디 · 비지터호스트리더 · ST · 멤버쉽위원 · 3스타 그린클럽 · 자이언츠 챕터 앰버서더</div>
+  </div>
+  <div class="bni-grid">
+    <div class="bni-card">
+      <div class="bni-card-icon">🏥</div>
+      <div class="bni-card-title">물리치료사</div>
+      <div class="bni-card-desc">15년 메디컬 데이터 분석 경험</div>
+    </div>
+    <div class="bni-card">
+      <div class="bni-card-icon">🍽️</div>
+      <div class="bni-card-title">요식업</div>
+      <div class="bni-card-desc">10년 실전 F&B 브랜드 경영</div>
+    </div>
+    <div class="bni-card" style="grid-column:span 2;">
+      <div class="bni-card-icon">💻</div>
+      <div class="bni-card-title">T.M 대표</div>
+      <div class="bni-card-desc">앱·웹 개발사 — Transition Makers</div>
+    </div>
   </div>
 </div>
 
@@ -627,14 +826,14 @@ body {
       <div class="link-icon">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
           <defs>
-            <radialGradient id="ig2" cx="30%" cy="107%" r="150%">
+            <radialGradient id="ig3" cx="30%" cy="107%" r="150%">
               <stop offset="0%" stop-color="#fdf497"/>
               <stop offset="45%" stop-color="#fd5949"/>
               <stop offset="60%" stop-color="#d6249f"/>
               <stop offset="90%" stop-color="#285AEB"/>
             </radialGradient>
           </defs>
-          <rect width="24" height="24" rx="6" fill="url(#ig2)"/>
+          <rect width="24" height="24" rx="6" fill="url(#ig3)"/>
           <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8" fill="none"/>
           <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
         </svg>
@@ -648,7 +847,7 @@ body {
       <div class="link-icon">
         <svg width="26" height="26" viewBox="0 0 24 24">
           <rect width="24" height="24" rx="6" fill="#000"/>
-          <path d="M12.186 4C8.64 4 6 6.427 6 10.048c0 3.507 2.383 5.768 6.059 5.768 1.518 0 2.844-.436 3.765-1.23v.954c0 1.86-1.118 2.89-3.153 2.89-1.34 0-2.48-.4-3.37-1.18l-1.18 1.6C9.28 19.6 10.7 20 12.67 20c3.28 0 5.33-1.74 5.33-5.06V10.2C18 6.56 15.49 4 12.186 4zm.028 9.48c-2.17 0-3.55-1.3-3.55-3.45 0-2.1 1.42-3.4 3.55-3.4 2.07 0 3.43 1.28 3.43 3.4 0 2.18-1.36 3.45-3.43 3.45z" fill="white"/>
+          <path d="M12.186 4C8.64 4 6 6.427 6 10.048c0 3.507 2.383 5.768 6.059 5.768 1.518 0 2.844-.436 3.765-1.23v.954c0 1.86-1.118 2.89-3.153 2.89-1.34 0-2.48-.4-3.37-1.18l-1.18 1.6C9.28 19.6 10.7 20 12.67 20c3.28 0 5.33-1.74 5.33-5.06V10.2C18 6.56 15.49 4 12.186 4zm.028 9.48c-2.17 0-3.55-1.3-3.55-3.45 0-2.1 1.42-3.4 3.55-3.4 2.07 0 3.43 1.28 3.43 3.4 0 2.18-1.36 3.43-3.43 3.45z" fill="white"/>
         </svg>
       </div>
       <div>
@@ -672,10 +871,11 @@ body {
 </div>
 
 <!-- QR -->
-<div class="qr-wrap">
+<div class="qr-section">
   <div class="sec-label" style="width:100%">QR Code</div>
-  <img class="qr-img" src="qr_songsunghun.png" alt="QR Code" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-  <div style="display:none;width:140px;height:140px;border:2px solid var(--gold-border);border-radius:14px;background:var(--dark);align-items:center;justify-content:center;font-size:11px;color:var(--gold);text-align:center;padding:10px;">QR 이미지<br>여기 삽입</div>
+  <img class="qr-img" src="qr_songsunghun.png" alt="QR Code"
+    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div style="display:none;width:160px;height:160px;border:2px solid var(--crimson-border);border-radius:16px;background:var(--black);align-items:center;justify-content:center;font-size:11px;color:var(--gold);text-align:center;padding:10px;">QR 이미지<br>여기 삽입</div>
   <div class="qr-desc">
     <span data-lang="kr" class="active">QR 스캔으로 명함 저장</span>
     <span data-lang="en">Scan QR to save card</span>
@@ -722,6 +922,10 @@ function setLang(lang) {
   });
 }
 
+function toggleWhy(card) {
+  card.classList.toggle('open');
+}
+
 function saveContact() {
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:송승훈\nORG:T.M (Transition Makers)\nTITLE:대표 (앱·웹 개발)\nTEL:010-5334-2544\nEMAIL:jinjjabg@gmail.com\nURL:https://jinjjabg-hub.github.io/MANDU/\nEND:VCARD`;
   const blob = new Blob([vcard], {type:'text/vcard'});
@@ -735,8 +939,10 @@ function saveCard() {
   alert('명함첩에 저장되었습니다.');
 }
 
+// 슬라이드
 let slideIdx = 0;
 const totalSlides = 5;
+
 function initSlide() {
   const dots = document.getElementById('slideDots');
   for (let i = 0; i < totalSlides; i++) {
@@ -746,12 +952,19 @@ function initSlide() {
     dots.appendChild(d);
   }
 }
+
 function goSlide(idx) {
   slideIdx = Math.max(0, Math.min(idx, totalSlides - 1));
   document.getElementById('slideTrack').style.transform = `translateX(-${slideIdx * 100}%)`;
-  document.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === slideIdx));
+  document.querySelectorAll('.slide-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === slideIdx);
+  });
 }
-function slideMove(dir) { goSlide(slideIdx + dir); }
+
+function slideMove(dir) {
+  goSlide(slideIdx + dir);
+}
+
 initSlide();
 </script>
 </body>
