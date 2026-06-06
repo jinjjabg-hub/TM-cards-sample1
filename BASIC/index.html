@@ -3,509 +3,249 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta property="og:title" content="송승훈 | T.M (Transition Makers)">
+<meta property="og:description" content="One Size Never Fits All — 흔한 템플릿이 아닌, 당신만의 고유한 정체성을 구현합니다.">
+<meta property="og:image" content="./hero.jpg">
 <title>송승훈 | T.M</title>
-<meta name="description" content="명함 한 장에 당신의 모든 비즈니스를 담습니다.">
-<meta property="og:title" content="송승훈 | T.M">
-<meta property="og:description" content="4개국어 디지털 명함으로 글로벌 비즈니스도 막힘없이.">
-<meta property="og:type" content="website">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black: #0a0a0a;
-  --black2: #111111;
-  --black3: #1a1a1a;
-  --gold: #f0b429;
-  --gold-light: #ffd04d;
-  --gold-dim: rgba(240,180,41,0.12);
-  --gold-border: rgba(240,180,41,0.3);
-  --cream: #f5f0e8;
-  --cream-dim: rgba(245,240,232,0.55);
-  --cream-muted: rgba(245,240,232,0.3);
+  --main: #e8650a;
+  --sub:  #3d8c4f;
+  --bg:   #f5f2ee;
+  --cream: #1a1a1a;
+  --cream-dim: rgba(26,26,26,0.65);
+  --cream-muted: rgba(26,26,26,0.38);
+  --main-dim:    rgba(232,101,10,0.08);
+  --main-border: rgba(232,101,10,0.22);
+  --sub-dim:     rgba(61,140,79,0.08);
+  --sub-border:  rgba(61,140,79,0.22);
 }
-
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+body { font-family:'Noto Sans KR',sans-serif; background:var(--bg); color:var(--cream); min-height:100vh; display:flex; justify-content:center; }
+.card { width:100%; max-width:430px; }
 
-body {
-  background: var(--black);
-  color: var(--cream);
-  font-family: 'Noto Sans KR', sans-serif;
-  max-width: 430px;
-  margin: 0 auto;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* LANG SWITCHER */
-.lang-bar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(10,10,10,0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--gold-border);
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.lang-brand {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  letter-spacing: 0.3em;
-  color: var(--gold);
-  text-transform: uppercase;
-}
-.lang-buttons {
-  display: flex;
-  gap: 4px;
-}
-.lang-btn {
-  background: none;
-  border: 1px solid var(--gold-border);
-  color: var(--cream-dim);
-  font-size: 11px;
-  font-family: 'Noto Sans KR', sans-serif;
-  padding: 4px 10px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.2s;
-  letter-spacing: 0.05em;
-}
-.lang-btn.active {
-  background: var(--gold);
-  color: var(--black);
-  border-color: var(--gold);
-  font-weight: 700;
-}
+/* 언어바 */
+.lang-bar { display:flex; justify-content:space-between; align-items:center; padding:12px 20px; background:rgba(255,255,255,0.9); border-bottom:1px solid rgba(232,101,10,0.15); position:sticky; top:0; z-index:100; backdrop-filter:blur(12px); }
+.lang-brand { font-size:12px; font-weight:700; letter-spacing:3px; color:var(--main); }
+.lang-btns { display:flex; gap:5px; }
+.lang-btn { padding:4px 10px; border:1px solid var(--main-border); border-radius:20px; background:transparent; color:var(--cream-muted); font-size:11px; cursor:pointer; font-family:inherit; min-height:28px; transition:all 0.2s; }
+.lang-btn.active { background:var(--main); color:#fff; border-color:var(--main); }
 
 /* HERO */
-.hero {
-  position: relative;
-  height: 420px;
-  overflow: hidden;
-  background: var(--black2);
-}
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.6;
-  filter: grayscale(20%);
-}
-.hero-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1208 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-initials {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 120px;
-  font-weight: 400;
-  color: var(--gold-border);
-  letter-spacing: -0.05em;
-  user-select: none;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,1) 0%, rgba(10,10,10,0.3) 50%, transparent 100%);
-}
-.hero-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 32px 24px 28px;
-}
-.hero-tag {
-  display: inline-block;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  border: 1px solid var(--gold-border);
-  padding: 3px 10px;
-  border-radius: 20px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-}
-.hero-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
-  font-weight: 600;
-  color: #fff;
-  line-height: 1;
-  margin-bottom: 6px;
-  letter-spacing: -0.01em;
-}
-.hero-title {
-  font-size: 13px;
-  color: var(--cream-dim);
-  letter-spacing: 0.1em;
-}
+.hero { position:relative; height:420px; overflow:hidden; background:#111; }
+.hero img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+.hero-placeholder { width:100%; height:100%; display:none; align-items:center; justify-content:center; background:linear-gradient(135deg,#1a1a1a,#0f1a0f); }
+.hero-initial { font-size:80px; font-weight:700; color:var(--main); opacity:0.35; }
+.hero-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(10,10,10,0.97) 0%,rgba(10,10,10,0.15) 55%,transparent 100%); }
+.hero-content { position:absolute; bottom:28px; left:24px; right:24px; }
+.hero-company { font-size:11px; font-weight:700; letter-spacing:4px; color:var(--main); margin-bottom:6px; }
+.hero-name { font-size:34px; font-weight:700; line-height:1.05; }
+.hero-title { margin-top:10px; display:flex; flex-wrap:wrap; gap:6px; }
+.badge { padding:4px 12px; border-radius:20px; font-size:11px; font-weight:500; border:1px solid var(--main-border); background:var(--main-dim); color:var(--main); }
+.badge-g { border-color:var(--sub-border); background:var(--sub-dim); color:#5cb870; }
 
-/* GOLD LINE */
-.gold-line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 0 24px;
-}
+/* 소개 */
+.intro { padding:24px 24px 20px; border-bottom:1px solid rgba(0,0,0,0.07); }
+.intro-slogan { font-size:16px; font-weight:700; color:var(--main); }
+.intro-slogan-sub { font-size:11px; color:var(--cream-muted); margin-top:2px; }
+.intro-about { margin-top:12px; font-size:13px; line-height:1.7; color:var(--cream-dim); padding-left:10px; border-left:2.5px solid var(--sub); }
 
-/* SECTION */
-.section {
-  padding: 28px 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
+/* 연락처 */
+.contact { padding:20px 24px; border-bottom:1px solid rgba(0,0,0,0.07); }
+.contact-item { display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--cream); min-height:44px; padding:12px 16px; background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:12px; transition:background 0.2s; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+.contact-item:active { background:var(--main-dim); }
+.contact-icon { width:36px; height:36px; border-radius:50%; background:var(--main); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.contact-label { font-size:10px; color:var(--cream-muted); letter-spacing:1px; text-transform:uppercase; }
+.contact-value { font-size:14px; font-weight:500; margin-top:1px; }
 
-/* INTRO */
-.intro-text {
-  font-size: 14px;
-  line-height: 1.9;
-  color: var(--cream-dim);
-  font-weight: 300;
-}
-.intro-text strong {
-  color: var(--gold);
-  font-weight: 500;
-}
+/* 링크 */
+.links { padding:20px 24px; border-bottom:1px solid rgba(0,0,0,0.07); }
+.links-label { font-size:10px; letter-spacing:2px; color:var(--cream-muted); text-transform:uppercase; margin-bottom:12px; }
+.link-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.link-item { display:flex; align-items:center; gap:10px; padding:14px; background:#fff; border:1px solid rgba(0,0,0,0.08); border-radius:12px; text-decoration:none; color:var(--cream); font-size:13px; font-weight:500; min-height:44px; transition:all 0.2s; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+.link-item:active { background:var(--main-dim); border-color:var(--main-border); }
+.link-icon { width:26px; height:26px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px; }
 
-/* CONTACT LIST */
-.contact-label {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.2s;
-}
-.contact-item:last-child { border-bottom: none; }
-.contact-item:hover .contact-value { color: var(--gold); }
-.contact-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--gold-dim);
-  border: 1px solid var(--gold-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  flex-shrink: 0;
-}
-.contact-meta { flex: 1; min-width: 0; }
-.contact-type { font-size: 10px; color: var(--cream-muted); letter-spacing: 0.1em; margin-bottom: 2px; }
-.contact-value { font-size: 13px; color: var(--cream); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-/* LINK GRID */
-.link-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.link-card {
-  background: var(--black3);
-  border: 1px solid var(--gold-border);
-  border-radius: 14px;
-  padding: 16px;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: all 0.25s;
-  cursor: pointer;
-}
-.link-card:hover {
-  background: var(--gold-dim);
-  border-color: var(--gold);
-  transform: translateY(-2px);
-}
-.link-card-icon { font-size: 22px; }
-.link-card-label { font-size: 10px; color: var(--cream-muted); letter-spacing: 0.1em; text-transform: uppercase; }
-.link-card-name { font-size: 13px; font-weight: 500; color: var(--cream); }
-
-/* ACTION BUTTONS */
-.action-row {
-  display: flex;
-  gap: 10px;
-  padding: 24px;
-}
-.btn-primary {
-  flex: 1;
-  background: var(--gold);
-  color: var(--black);
-  border: none;
-  border-radius: 30px;
-  padding: 14px;
-  font-size: 13px;
-  font-weight: 700;
-  font-family: 'Noto Sans KR', sans-serif;
-  cursor: pointer;
-  letter-spacing: 0.05em;
-  transition: all 0.2s;
-}
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-.btn-secondary {
-  flex: 1;
-  background: none;
-  color: var(--gold);
-  border: 1px solid var(--gold-border);
-  border-radius: 30px;
-  padding: 14px;
-  font-size: 13px;
-  font-weight: 500;
-  font-family: 'Noto Sans KR', sans-serif;
-  cursor: pointer;
-  letter-spacing: 0.05em;
-  transition: all 0.2s;
-}
-.btn-secondary:hover { border-color: var(--gold); background: var(--gold-dim); }
+/* 저장 */
+.save-btns { padding:20px 24px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.save-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px; padding:18px 12px; border-radius:16px; border:none; cursor:pointer; font-family:inherit; font-size:12px; font-weight:600; min-height:72px; transition:all 0.2s; }
+.save-btn-contact { background:var(--main); color:#fff; }
+.save-btn-contact:active { opacity:0.85; }
+.save-btn-card { background:transparent; border:1.5px solid var(--sub-border); color:#5cb870; }
+.save-btn-card:active { background:var(--sub-dim); }
 
 /* FOOTER */
-.footer {
-  padding: 24px;
-  text-align: center;
-  border-top: 1px solid var(--gold-border);
-}
-.footer-brand {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  color: var(--gold);
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-.footer-sub {
-  font-size: 10px;
-  color: var(--cream-muted);
-  letter-spacing: 0.15em;
-}
+.footer { padding:20px 24px 36px; text-align:center; border-top:1px solid rgba(0,0,0,0.07); }
+.footer-logo { font-size:11px; font-weight:700; letter-spacing:4px; color:var(--main); }
+.footer-sub { font-size:10px; color:var(--cream-muted); margin-top:4px; }
 
-/* LANG CONTENT */
-[data-lang] { display: none; }
-[data-lang].active { display: block; }
-[data-lang-inline] { display: none; }
-[data-lang-inline].active { display: inline; }
+/* 다국어 */
+[data-lang] { display:none; }
+[data-lang="ko"] { display:block; }
+span[data-lang="ko"] { display:inline; }
 </style>
 </head>
 <body>
+<div class="card">
 
-<!-- LANG BAR -->
-<div class="lang-bar">
-  <span class="lang-brand">T.M</span>
-  <div class="lang-buttons">
-    <button class="lang-btn active" onclick="setLang('kr')">KR</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('jp')">JP</button>
-    <button class="lang-btn" onclick="setLang('cn')">CN</button>
-  </div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-placeholder">
-    <span class="hero-initials">宋</span>
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-tag">
-      <span data-lang="kr" class="active">웹·앱 개발</span>
-      <span data-lang="en">Web · App Dev</span>
-      <span data-lang="jp">ウェブ・アプリ開発</span>
-      <span data-lang="cn">网页·应用开发</span>
-    </span>
-    <div class="hero-name">
-      <span data-lang="kr" class="active">송승훈</span>
-      <span data-lang="en">Seung-Hun Song</span>
-      <span data-lang="jp">ソン・スンフン</span>
-      <span data-lang="cn">宋昇勳</span>
-    </div>
-    <div class="hero-title">
-      <span data-lang="kr" class="active">대표 · T.M</span>
-      <span data-lang="en">CEO · T.M</span>
-      <span data-lang="jp">代表 · T.M</span>
-      <span data-lang="cn">代表 · T.M</span>
+  <!-- 1. 언어바 -->
+  <div class="lang-bar">
+    <span class="lang-brand">T.M</span>
+    <div class="lang-btns">
+      <button class="lang-btn active" onclick="setLang('ko',this)">KR</button>
+      <button class="lang-btn" onclick="setLang('en',this)">EN</button>
+      <button class="lang-btn" onclick="setLang('jp',this)">JP</button>
+      <button class="lang-btn" onclick="setLang('cn',this)">CN</button>
     </div>
   </div>
-</div>
 
-<div class="gold-line"></div>
-
-<!-- INTRO -->
-<div class="section">
-  <div data-lang="kr" class="active intro-text">
-    <strong>명함 한 장에 당신의 모든 비즈니스를 담습니다.</strong><br><br>
-    4개국어 디지털 명함으로 글로벌 비즈니스도 막힘없이.<br>
-    웹·앱 개발까지, T.M이 함께합니다.
-  </div>
-  <div data-lang="en" class="intro-text">
-    <strong>Your entire business, in a single card.</strong><br><br>
-    Break language barriers with a 4-language digital card.<br>
-    Web & app development — T.M has you covered.
-  </div>
-  <div data-lang="jp" class="intro-text">
-    <strong>一枚の名刺に、あなたのすべてのビジネスを。</strong><br><br>
-    4ヶ国語対応のデジタル名刺でグローバルビジネスもスムーズに。<br>
-    ウェブ・アプリ開発まで、T.Mがお手伝いします。
-  </div>
-  <div data-lang="cn" class="intro-text">
-    <strong>一张名片，承载您的全部业务。</strong><br><br>
-    四国语言数字名片，全球商务畅通无阻。<br>
-    网页与应用开发，T.M与您同行。
-  </div>
-</div>
-
-<!-- CONTACT -->
-<div class="section">
-  <div class="contact-label">
-    <span data-lang="kr" class="active">연락처</span>
-    <span data-lang="en">Contact</span>
-    <span data-lang="jp">連絡先</span>
-    <span data-lang="cn">联系方式</span>
-  </div>
-
-  <a class="contact-item" href="tel:01053342544">
-    <div class="contact-icon">📞</div>
-    <div class="contact-meta">
-      <div class="contact-type">
-        <span data-lang="kr" class="active">전화</span>
-        <span data-lang="en">Phone</span>
-        <span data-lang="jp">電話</span>
-        <span data-lang="cn">电话</span>
+  <!-- 2. HERO -->
+  <div class="hero">
+    <img src="./hero.jpg" alt="송승훈" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="hero-placeholder"><div class="hero-initial">SSH</div></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-company">T.M · TRANSITION MAKERS</div>
+      <div class="hero-name">
+        <span data-lang="ko">송승훈</span>
+        <span data-lang="en">Seunghun Song</span>
+        <span data-lang="jp">ソン・スンフン</span>
+        <span data-lang="cn">宋昇勳</span>
       </div>
-      <div class="contact-value">010-5334-2544</div>
+      <div class="hero-title">
+        <span class="badge" data-lang="ko">대표 · CEO</span>
+        <span class="badge badge-g" data-lang="ko">앱·웹 개발</span>
+        <span class="badge" data-lang="en">CEO · Founder</span>
+        <span class="badge badge-g" data-lang="en">App Development</span>
+        <span class="badge" data-lang="jp">代表 · CEO</span>
+        <span class="badge badge-g" data-lang="jp">アプリ開発</span>
+        <span class="badge" data-lang="cn">代表 · CEO</span>
+        <span class="badge badge-g" data-lang="cn">应用开发</span>
+      </div>
     </div>
-  </a>
-
-  <a class="contact-item" href="mailto:jinjjabg@gmail.com">
-    <div class="contact-icon">✉️</div>
-    <div class="contact-meta">
-      <div class="contact-type">Email</div>
-      <div class="contact-value">jinjjabg@gmail.com</div>
-    </div>
-  </a>
-</div>
-
-<!-- LINKS -->
-<div class="section">
-  <div class="contact-label">
-    <span data-lang="kr" class="active">링크</span>
-    <span data-lang="en">Links</span>
-    <span data-lang="jp">リンク</span>
-    <span data-lang="cn">链接</span>
   </div>
-  <div class="link-grid">
-    <a class="link-card" href="https://jinjjabg-hub.github.io/MANDU/" target="_blank">
-      <div class="link-card-icon">
-        <img src="https://jinjjabg-hub.github.io/MANDU/icon-192.png" alt="MANDU" style="width:28px;height:28px;object-fit:contain;">
-      </div>
-      <div>
-        <div class="link-card-label">
-          <span data-lang="kr" class="active">번역 메신저</span>
-          <span data-lang="en">Translator</span>
-          <span data-lang="jp">翻訳</span>
-          <span data-lang="cn">翻译</span>
-        </div>
-        <div class="link-card-name">MANDU</div>
-      </div>
-    </a>
-    <a class="link-card" href="https://www.instagram.com/tomahawk_all/" target="_blank">
-      <div class="link-card-icon">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-          <defs>
-            <radialGradient id="ig1" cx="30%" cy="107%" r="150%">
-              <stop offset="0%" stop-color="#fdf497"/>
-              <stop offset="5%" stop-color="#fdf497"/>
-              <stop offset="45%" stop-color="#fd5949"/>
-              <stop offset="60%" stop-color="#d6249f"/>
-              <stop offset="90%" stop-color="#285AEB"/>
-            </radialGradient>
-          </defs>
-          <rect width="24" height="24" rx="6" fill="url(#ig1)"/>
-          <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8" fill="none"/>
-          <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+
+  <!-- 3. 소개 -->
+  <div class="intro">
+    <div data-lang="ko">
+      <div class="intro-slogan">One Size Never Fits All</div>
+      <div class="intro-slogan-sub">모든 사람에게 같은 답은 통하지 않는다</div>
+      <div class="intro-about">흔한 템플릿이 아닌, 당신만의 고유한 정체성과 가치관을 디지털 세계에 구현합니다.</div>
+    </div>
+    <div data-lang="en">
+      <div class="intro-slogan">One Size Never Fits All</div>
+      <div class="intro-slogan-sub">No single solution works for everyone</div>
+      <div class="intro-about">Not a cookie-cutter template — your unique identity and values, brought to life in the digital world.</div>
+    </div>
+    <div data-lang="jp">
+      <div class="intro-slogan">One Size Never Fits All</div>
+      <div class="intro-slogan-sub">全員に同じ答えは通用しない</div>
+      <div class="intro-about">ありきたりなテンプレートではなく、あなただけのアイデンティティをデジタルで実現します。</div>
+    </div>
+    <div data-lang="cn">
+      <div class="intro-slogan">One Size Never Fits All</div>
+      <div class="intro-slogan-sub">没有放之四海而皆准的答案</div>
+      <div class="intro-about">不是千篇一律的模板，而是将您独特的身份与价值观在数字世界中完整呈现。</div>
+    </div>
+  </div>
+
+  <!-- 4. 연락처 -->
+  <div class="contact">
+    <a href="tel:010-5334-2544" class="contact-item">
+      <div class="contact-icon">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72A2 2 0 012 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 14.92z"/>
         </svg>
       </div>
       <div>
-        <div class="link-card-label">Instagram</div>
-        <div class="link-card-name">@tomahawk_all</div>
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">010-5334-2544</div>
       </div>
     </a>
   </div>
-</div>
 
-<!-- ACTION BUTTONS -->
-<div class="action-row">
-  <button class="btn-primary" onclick="saveContact()">
-    <span data-lang="kr" class="active">📞 연락처 저장</span>
-    <span data-lang="en">📞 Save Contact</span>
-    <span data-lang="jp">📞 連絡先保存</span>
-    <span data-lang="cn">📞 保存联系人</span>
-  </button>
-  <button class="btn-secondary" onclick="saveCard()">
-    <span data-lang="kr" class="active">🗂️ 명함 저장</span>
-    <span data-lang="en">🗂️ Save Card</span>
-    <span data-lang="jp">🗂️ 名刺保存</span>
-    <span data-lang="cn">🗂️ 保存名片</span>
-  </button>
-</div>
+  <!-- 5. 링크 그리드 -->
+  <div class="links">
+    <div class="links-label">Links</div>
+    <div class="link-grid">
 
-<!-- FOOTER -->
-<div class="footer">
-  <div class="footer-brand">T.M</div>
-  <div class="footer-sub">
-    <span data-lang="kr" class="active">디지털 명함 · 웹·앱 개발</span>
-    <span data-lang="en">Digital Card · Web & App Dev</span>
-    <span data-lang="jp">デジタル名刺・ウェブ・アプリ開発</span>
-    <span data-lang="cn">数字名片 · 网页应用开发</span>
+      <a href="https://jinjjabg-hub.github.io/T.M-LINK/" class="link-item" target="_blank" rel="noopener">
+        <div class="link-icon">🌐</div>
+        <span data-lang="ko">홈페이지</span><span data-lang="en">Website</span><span data-lang="jp">ホームページ</span><span data-lang="cn">主页</span>
+      </a>
+
+      <a href="https://jinjjabg-hub.github.io/MANDU/" class="link-item" target="_blank" rel="noopener">
+        <div class="link-icon">
+          <img src="./icon-192.png" width="24" height="24" style="border-radius:6px;" onerror="this.outerHTML='🥟'">
+        </div>
+        <span data-lang="ko">만두 메신저</span><span data-lang="en">MANDU App</span><span data-lang="jp">MANDUアプリ</span><span data-lang="cn">饺子APP</span>
+      </a>
+
+      <a href="https://www.instagram.com/tomahawk_all/" class="link-item" target="_blank" rel="noopener">
+        <div class="link-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs>
+            <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig)"/>
+            <circle cx="12" cy="12" r="4" fill="none" stroke="#fff" stroke-width="1.8"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="#fff"/>
+          </svg>
+        </div>
+        <span data-lang="ko">인스타그램</span><span data-lang="en">Instagram</span><span data-lang="jp">インスタ</span><span data-lang="cn">Instagram</span>
+      </a>
+
+      <a href="https://www.threads.com/@pioneer_bni" class="link-item" target="_blank" rel="noopener">
+        <div class="link-icon">
+          <svg width="20" height="20" viewBox="0 0 192 192" fill="rgba(245,240,232,0.5)">
+            <path d="M141.537 88.988c-.976-.457-1.965-.878-2.965-1.262a74 74 0 00-1.501-.538c-3.654-45.65-27.506-71.81-69.537-72.079-22.449 0-41.123 9.5-52.685 26.762l17.494 12.007C39.07 42.796 52.43 37.5 68.5 37.5c27.07 0 42.85 15.27 47.5 45.5-18.07-3.22-37.66-.51-52.5 7.86-14.83 8.37-24.05 22.23-24.05 37.64 0 22.05 17.5 37.5 42.5 37.5 16.4 0 31.5-5.6 42.5-16.5 8.99-8.94 14.63-21.27 16.8-36.62 4.67 2.98 8.1 7.17 9.8 12.35 3.06 9.35.95 22.17-5.85 31.3-13.34 17.93-40.08 25.88-71.37 25.88-21.24 0-48.94-7.77-66.59-37.5-12.45-21.36-14.91-47.5-7.3-67.5 7.34-19.27 22.08-33.84 42.37-42.19-3.31-4.79-7.14-9.15-11.45-13.05C13.59 27.48-2.61 59.38.28 93.53c2.18 25.77 14.14 52.47 33.07 71.7 22.5 22.87 56.57 35.77 97.5 35.77 8.7 0 16.95-.65 24.6-1.9 36.2-5.9 60.02-27.45 68.69-62.38 8.86-35.8-4.85-69.98-27.63-89.49-2.55-2.16-5.2-4.16-7.97-6.01z"/>
+          </svg>
+        </div>
+        <span data-lang="ko">스레드</span><span data-lang="en">Threads</span><span data-lang="jp">スレッズ</span><span data-lang="cn">Threads</span>
+      </a>
+
+    </div>
   </div>
+
+  <!-- 6. 저장 버튼 -->
+  <div class="save-btns">
+    <button class="save-btn save-btn-contact" onclick="saveContact()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span data-lang="ko">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先を保存</span><span data-lang="cn">保存联系人</span>
+    </button>
+    <button class="save-btn save-btn-card" onclick="saveToCardbook()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <span data-lang="ko">명함첩 저장</span><span data-lang="en">Save Card</span><span data-lang="jp">名刺帳に保存</span><span data-lang="cn">保存名片</span>
+    </button>
+  </div>
+
+  <!-- 7. FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">T · M</div>
+    <div class="footer-sub">Transition Makers</div>
+  </div>
+
 </div>
-
 <script>
-let currentLang = 'kr';
-
-function setLang(lang) {
-  currentLang = lang;
-  document.querySelectorAll('[data-lang]').forEach(el => {
-    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
-  });
-  document.querySelectorAll('.lang-btn').forEach((btn, i) => {
-    const langs = ['kr','en','jp','cn'];
-    btn.classList.toggle('active', langs[i] === lang);
+function setLang(lang,btn){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('[data-lang]').forEach(el=>{
+    el.style.display = el.dataset.lang===lang ? (el.tagName==='SPAN'?'inline':'block') : 'none';
   });
 }
-
-function saveContact() {
-  const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:송승훈
-ORG:T.M
-TITLE:대표 (웹·앱 개발)
-TEL:010-5334-2544
-EMAIL:jinjjabg@gmail.com
-URL:https://jinjjabg-hub.github.io/MANDU/
-END:VCARD`;
-  const blob = new Blob([vcard], {type:'text/vcard'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'SongSeungHun_TM.vcf';
-  a.click();
+function saveContact(){
+  const v=`BEGIN:VCARD\nVERSION:3.0\nFN:송승훈\nN:송;승훈;;;\nORG:T.M (Transition Makers)\nTITLE:대표 CEO\nTEL;TYPE=CELL:010-5334-2544\nURL:https://jinjjabg-hub.github.io/T.M-LINK/\nNOTE:One Size Never Fits All\nEND:VCARD`;
+  const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(new Blob([v],{type:'text/vcard'})),download:'송승훈_TM.vcf'});
+  a.click(); URL.revokeObjectURL(a.href);
 }
-
-function saveCard() {
-  alert('명함첩에 저장되었습니다.');
+function saveToCardbook(){
+  const card={name:'송승훈',company:'T.M',phone:'010-5334-2544',url:location.href,savedAt:new Date().toISOString()};
+  const params=new URLSearchParams({name:card.name,company:card.company,phone:card.phone,url:card.url,savedAt:card.savedAt});
+  window.location.href='https://jinjjabg-hub.github.io/cardbook/?'+params.toString();
 }
+document.querySelectorAll('[data-lang]').forEach(el=>{
+  el.style.display=el.dataset.lang==='ko'?(el.tagName==='SPAN'?'inline':'block'):'none';
+});
 </script>
 </body>
 </html>
