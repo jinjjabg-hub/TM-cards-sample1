@@ -32,9 +32,11 @@ body { font-family:'Noto Sans KR',sans-serif; background:var(--bg); color:var(--
   position:fixed; inset:0; z-index:9999;
   background:var(--bg);
   display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
-  transition:opacity 0.6s ease;
+  transition:opacity 0.7s ease;
+  pointer-events:all;
 }
 #splash.hide { opacity:0; pointer-events:none; }
+#splash.gone { display:none; }
 .splash-logo {
   font-size:36px; font-weight:900; letter-spacing:6px; color:var(--main);
   opacity:0; animation:fadeUp 0.8s ease 0.3s forwards;
@@ -400,7 +402,7 @@ span[data-lang="ko"] { display:inline; }
         <div class="pkg-name" data-lang="en">⚡ Basic Digital Card</div>
         <div class="pkg-name" data-lang="jp">⚡ ベーシック デジタル名刺</div>
         <div class="pkg-name" data-lang="cn">⚡ 基础数字名片</div>
-        <div class="pkg-price">문의<span> / 건</span></div>
+        <div class="pkg-price"><span data-lang="ko">문의</span><span data-lang="en">Inquiry</span><span data-lang="jp">お問合せ</span><span data-lang="cn">咨询</span><span style="font-size:12px;font-weight:400;color:var(--muted)"> / 건</span></div>
         <ul class="pkg-features">
           <li data-lang="ko">4개국어 (한/영/일/중)</li>
           <li data-lang="ko">히어로 이미지 + 소개글</li>
@@ -419,12 +421,12 @@ span[data-lang="ko"] { display:inline; }
       </div>
 
       <div class="package-card featured animate-up">
-        <div class="featured-badge">RECOMMENDED</div>
+        <div class="featured-badge"><span data-lang="ko">추천</span><span data-lang="en">BEST</span><span data-lang="jp">おすすめ</span><span data-lang="cn">推荐</span></div>
         <div class="pkg-name" data-lang="ko">🌟 스탠다드 디지털 명함</div>
         <div class="pkg-name" data-lang="en">🌟 Standard Digital Card</div>
         <div class="pkg-name" data-lang="jp">🌟 スタンダード デジタル名刺</div>
         <div class="pkg-name" data-lang="cn">🌟 标准数字名片</div>
-        <div class="pkg-price">문의<span> / 건</span></div>
+        <div class="pkg-price"><span data-lang="ko">문의</span><span data-lang="en">Inquiry</span><span data-lang="jp">お問合せ</span><span data-lang="cn">咨询</span><span style="font-size:12px;font-weight:400;color:var(--muted)"> / 건</span></div>
         <ul class="pkg-features">
           <li data-lang="ko">베이직 전체 포함</li>
           <li data-lang="ko">WHY 3개 + 차별점 4개</li>
@@ -447,7 +449,7 @@ span[data-lang="ko"] { display:inline; }
         <div class="pkg-name" data-lang="en">💎 Premium Digital Card</div>
         <div class="pkg-name" data-lang="jp">💎 プレミアム デジタル名刺</div>
         <div class="pkg-name" data-lang="cn">💎 高级数字名片</div>
-        <div class="pkg-price">문의<span> / 건</span></div>
+        <div class="pkg-price"><span data-lang="ko">문의</span><span data-lang="en">Inquiry</span><span data-lang="jp">お問合せ</span><span data-lang="cn">咨询</span><span style="font-size:12px;font-weight:400;color:var(--muted)"> / 건</span></div>
         <ul class="pkg-features">
           <li data-lang="ko">스탠다드 전체 포함</li>
           <li data-lang="ko">스플래시 인트로 애니메이션</li>
@@ -490,7 +492,7 @@ span[data-lang="ko"] { display:inline; }
       <div class="bni-initial" style="display:none;">SSH</div>
       <div>
         <div class="bni-name"><span data-lang="ko">송승훈</span><span data-lang="en">Seunghun Song</span><span data-lang="jp">ソン・スンフン</span><span data-lang="cn">宋昇勳</span></div>
-        <div class="bni-role">BNI Ambassador · 자이언츠 챕터</div>
+        <div class="bni-role"><span data-lang="ko">BNI 앰버서더 · 자이언츠 챕터</span><span data-lang="en">BNI Ambassador · Giants Chapter</span><span data-lang="jp">BNI アンバサダー · ジャイアンツチャプター</span><span data-lang="cn">BNI大使 · 巨人챕터</span></div>
         <div class="bni-tags">
           <span class="bni-tag">3스타 그린클럽</span>
           <span class="bni-tag">파이오니어 의장</span>
@@ -641,14 +643,14 @@ span[data-lang="ko"] { display:inline; }
 // 스플래시
 (function(){
   if(sessionStorage.getItem('splashShown')){
-    document.getElementById('splash').style.display='none';
+    document.getElementById('splash').classList.add('gone');
     return;
   }
   sessionStorage.setItem('splashShown','1');
   setTimeout(()=>{
     const s=document.getElementById('splash');
     s.classList.add('hide');
-    setTimeout(()=>s.style.display='none', 650);
+    setTimeout(()=>s.classList.add('gone'), 750);
   }, 2400);
 })();
 
